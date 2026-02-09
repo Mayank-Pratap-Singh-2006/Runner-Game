@@ -15,6 +15,8 @@ function moveTracks() {
   track1.style.top = y1 + "px";
   track2.style.top = y2 + "px";
 
+  speed = speed + 0.00001;
+
   requestAnimationFrame(moveTracks);
 }
 
@@ -47,3 +49,35 @@ document.addEventListener("keydown", (e) => {
     ontrack = 0;
   }
 });
+
+let left_train = document.querySelector("#left_train");
+let center_train = document.querySelector("#center_train");
+let right_train = document.querySelector("#right_train");
+
+function train_system() {
+
+  setInterval(() => {
+    let train_lc = Math.floor(Math.random() * 100);
+    console.log(train_lc);
+
+    if (train_lc%3==0) {
+      left_train.style.visibility = "visible";
+      center_train.style.visibility = "hidden";
+      right_train.style.visibility = "hidden";
+    }
+
+    if (train_lc%3==1) {
+      left_train.style.visibility = "hidden";
+      center_train.style.visibility = "visible";
+      right_train.style.visibility = "hidden";
+    }
+
+    if (train_lc%3 == 2) {
+      left_train.style.visibility = "hidden";
+      center_train.style.visibility = "hidden";
+      right_train.style.visibility = "visible";
+    }
+  }, 1100); 
+}
+
+train_system();

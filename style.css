@@ -142,3 +142,65 @@ body {
     height: 145px;
   }
 }
+
+.train{
+  display: flex;
+  position:absolute;
+  top: 50px;
+  height: 400px;
+  width: 100px;
+}
+
+#right_train{
+  left: 553px;
+  visibility: hidden;
+}
+#center_train{
+  left: 712px;
+  visibility: hidden;
+  
+}
+#left_train{
+  right: 553px;
+  visibility: hidden;
+}
+
+.train img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.train {
+  position: absolute;
+  top: -450px;   /* start far above screen */
+  height: 400px;
+  width: 120px;
+  z-index: 20;
+
+  animation: trainComing 1.1s linear infinite;
+}
+
+.train img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ======= Animation ======= */
+@keyframes trainComing {
+  0% {
+    top: -450px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100vh;
+    opacity: 1;
+  }
+}
