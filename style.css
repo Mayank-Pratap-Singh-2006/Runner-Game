@@ -79,69 +79,6 @@ body {
 }
 
 
-/* ===================== RESPONSIVE ===================== */
-
-/* Small phones (max 480px) */
-@media (max-width: 480px) {
-  .track {
-    width: 100vw; /* full width */
-  }
-
-  .char_frame {
-    width: 70px;
-    height: 110px;
-    bottom: 5px;
-  }
-
-  #char_frame_left {
-    left: 30%;
-  }
-
-  #char_frame_center {
-    left: 50%;
-  }
-
-  #char_frame_right {
-    left: 70%;
-  }
-}
-
-/* Medium phones / Tablets (max 768px) */
-@media (max-width: 768px) {
-  .track {
-    width: 80vw;
-  }
-
-  .char_frame {
-    width: 85px;
-    height: 130px;
-    bottom: 5px;
-  }
-
-  #char_frame_left {
-    left: 35%;
-  }
-
-  #char_frame_center {
-    left: 50%;
-  }
-
-  #char_frame_right {
-    left: 65%;
-  }
-}
-
-/* Laptops (max 1024px) */
-@media (max-width: 1024px) {
-  .track {
-    width: 500px;
-  }
-
-  .char_frame {
-    width: 95px;
-    height: 145px;
-  }
-}
 
 .train{
   display: flex;
@@ -152,17 +89,17 @@ body {
 }
 
 #right_train{
-  left: 553px;
-  visibility: hidden;
+  left: 549px;
+  visibility: visible;
 }
 #center_train{
-  left: 712px;
-  visibility: hidden;
+  left: 707px;
+  visibility: visible;
   
 }
 #left_train{
-  right: 553px;
-  visibility: hidden;
+  right: 552px;
+  visibility: visible;
 }
 
 .train img{
@@ -179,7 +116,7 @@ body {
   width: 120px;
   z-index: 20;
 
-  animation: trainComing 1.1s linear infinite;
+  animation: trainComing 1.1s linear ;
 }
 
 .train img {
@@ -203,4 +140,87 @@ body {
     top: 100vh;
     opacity: 1;
   }
+}
+
+.game_load {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(to bottom, #000000, #111111);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+  gap: 20px;
+}
+
+.game_load h1 {
+  font-size: 3rem;
+  font-family: Arial, sans-serif;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+#game_start {
+  padding: 15px 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #00ff88;
+  color: black;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.5);
+}
+
+#game_start:hover {
+  transform: scale(1.08);
+  background: #00cc6f;
+}
+
+#game_start:active {
+  transform: scale(0.95);
+}
+
+#collision_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay_content {
+  text-align: center;
+  color: white;
+}
+
+.overlay_content button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 10px;
 }

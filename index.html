@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <!-- Game load screen -->
+    <div class="game_load">
+      <h1>Game Runner</h1>
+      <button id="game_start">Play</button>
+    </div>
+
+    <!-- Tracks -->
     <div class="track">
       <img src="assets/Track_frame.png" alt="" id="track_frame1" />
     </div>
@@ -14,12 +22,41 @@
       <img src="assets/Track_frame.png" alt="" id="track_frame2" />
     </div>
 
-    <div id="char_frame_left" class="char_frame"><img src="assets/f1-removebg-preview.png"></div>
-    <div id="char_frame_center" class="char_frame"><img src="assets/f1-removebg-preview.png"></div>
-    <div id="char_frame_right" class="char_frame"><img src="assets/f1-removebg-preview.png"></div>
-    <div id="left_train" class="train"><img src="assets/tain-max-removebg-preview.png" alt=""></div>
-    <div id="center_train" class="train"><img src="assets/tain-max-removebg-preview.png" alt=""></div>
-    <div id="right_train" class="train"><img src="assets/tain-max-removebg-preview.png" alt=""></div>
+    <!-- Characters -->
+    <div id="char_frame_left" class="char_frame">
+      <img src="assets/f1-removebg-preview.png">
+    </div>
+    <div id="char_frame_center" class="char_frame">
+      <img src="assets/f1-removebg-preview.png">
+    </div>
+    <div id="char_frame_right" class="char_frame">
+      <img src="assets/f1-removebg-preview.png">
+    </div>
+
+    <!-- Trains -->
+    <div id="left_train" class="train">
+      <img src="assets/tain-max-removebg-preview.png" alt="">
+    </div>
+    <div id="center_train" class="train">
+      <img src="assets/tain-max-removebg-preview.png" alt="">
+    </div>
+    <div id="right_train" class="train">
+      <img src="assets/tain-max-removebg-preview.png" alt="">
+    </div>
+
+    <!-- Background music -->
+    <audio id="bgm" src="assets/subway_surfers.mp3" loop></audio>
+
+    <!-- Collision sound -->
+    <audio id="collision_sound" src="assets/subway-surfers-crash.mp3"></audio>
+
+    <!-- Collision overlay -->
+    <div id="collision_overlay" style="display:none;">
+      <div class="overlay_content">
+        <h1>💀 Death 💀</h1>
+        <button id="replay_btn">Replay</button>
+      </div>
+    </div>
 
   </body>
   <script src="script.js"></script>
